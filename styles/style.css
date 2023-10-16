@@ -9,13 +9,15 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
+  display: flex;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 h1,
@@ -39,43 +41,33 @@ ol {
 
 .visually-hidden {
   position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
 }
 
-.page {
-  display: flex;
-  align-items: center;
-  margin: auto;
-  inline-size: 1200px;
-  block-size: 100%;
+.button {
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: normal;
+  text-align: center;
+  background: transparent;
+  cursor: pointer;
 }
 
 .content {
-  padding: 0 30px;
   display: flex;
-  gap: 30px;
   align-items: flex-end;
+  gap: 30px;
   width: 100%;
+  padding: 0 30px;
 }
-
-/* Пепреиспользуемые компоненты */
-
-.button {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: normal;
-  background: transparent;
-  border: 1px solid #fff;
-  font-family: inherit;
-}
-
-/* Секция с видео и формой поиска */
 
 .result {
   display: flex;
@@ -83,8 +75,6 @@ ol {
   justify-content: flex-start;
   gap: 16px;
 }
-
-/* Блок с видео */
 
 .result__video-container {
   position: relative;
@@ -99,116 +89,71 @@ ol {
   object-position: center;
 }
 
-/* Форма поиска */
-
 .search-form {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  width: 100%;
 }
-
-/* Общие элементы для блока поиска */
 
 .search-form__fieldset {
   border: none;
 }
 
 .search-form__fieldset-title {
+  margin-bottom: 5px;
   color: #fff;
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
-  margin-bottom: 5px;
 }
 
 .search-form__label {
   display: flex;
+  align-items: center;
   width: fit-content;
-}
-
-/* Убираем дефолтный outline браузера при focus-visible  */
-
-.search-form__label:focus-visible {
-  outline: none;
-}
-
-.search-form__label:has(:focus-visible) {
-  border: 1px solid #fff;
-}
-
-.search-form__submit-button {
-  padding: 6px 73.5px;
-  align-self: flex-end;
+  cursor: pointer;
 }
 
 .search-form__textfield {
-  appearance: none;
-  background: transparent;
+  width: 225px;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: normal;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   padding: 2px 0;
-  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
   font-family: inherit;
-  width: 225px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: normal;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
 }
 
 .search-form__textfield::placeholder {
   font-family: inherit;
 }
 
-.search-form__textfield:focus {
-  border: none;
-  outline: none;
-}
-
 .search-form__checkbox-list {
   display: flex;
-  appearance: none;
   gap: 15px;
+  appearance: none;
 }
 
 .search-form__pseudo-checkbox {
   position: relative;
-  appearance: none;
   width: 19px;
   height: 19px;
-  border: 1px solid #fff;
   margin-right: 5px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  appearance: none;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox:after {
-  position: absolute;
-  content: "";
-  width: 15px;
-  height: 15px;
-  background-color: white;
-  top: 1px;
-  left: 1px;
-}
-
-/* Контент */
-
-.title {
-  font-family: Oswald, sans-serif;
-  color: #fff;
-  font-size: 75px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 94%;
-  text-transform: uppercase;
-  margin-bottom: 26px;
-}
-
-.content__accent {
-  font-family: Oswald, sans-serif;
-  position: relative;
-  color: #545050;
+.search-form__submit-button {
+  align-self: flex-end;
+  padding: 6px 73.5px;
 }
 
 .content__details {
@@ -216,56 +161,160 @@ ol {
   block-size: 100%;
 }
 
+.title {
+  margin-bottom: 26px;
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  font-style: normal;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+  font-family: Oswald, sans-serif;
+}
+
 .content__list {
+  position: relative;
   display: flex;
-  block-size: 298px;
   flex-direction: column;
   align-items: flex-start;
   gap: 30px;
   overflow: scroll;
+  block-size: 298px;
 }
 
-/*.content__list-item + .content__list-item {*/
-/*  margin-top: 30px;*/
-/*}*/
+.content__list-item {
+  inline-size: 100%;
+}
 
 .content__card-link {
-  text-decoration: none;
+  display: block;
+  margin: 2px;
   color: #fff;
+  text-decoration: none;
 }
 
 .content__video-card {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  padding: 2px;
+  align-items: flex-start;
 }
 
 .content__video-card-description-container {
-  width: 100%;
+  width: fit-content;
+  padding: 2px;
 }
 
 .content__video-card-title {
+  margin-bottom: 6px;
   font-family: Oswald, sans-serif;
-  font-size: 30px;
   font-weight: 700;
+  font-size: 30px;
   line-height: 100%; /* 30px */
   text-transform: uppercase;
-  margin-bottom: 6px;
 }
 
 .content__video-card-description {
-  font-size: 18px;
   font-weight: 400;
+  font-size: 18px;
   line-height: 16.2px; /* 90% */
 }
 
 .content__video-card-thumbnail {
+  flex-shrink: 0;
   width: 194px;
   height: 103px;
-  flex-shrink: 0;
 }
 
 .more-button {
-  padding: 6px 137.5px;
+  padding: 6px 0;
+  inline-size: inherit;
+}
+
+/* Понимаю, что не лучшее решение, но другого я не придумал.
+ Сделал так, потому что этот блок все равно должен быть в ширину всего
+ родительского блока. В этой связи и решил делать не через падинги, а так, как
+ сделал. Я мог бы задать класс пустому ли и сделать красивее, но в задании говорилось,
+ что не рекомендуется менять html */
+li:has(.more-button) {
+  inline-size: 100%;
+}
+
+/* СОСТОЯНИЯ */
+
+/* ТЕКСТОВОЕ ПОЛЕ */
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ЧЕКБОКСЫ */
+
+/* БЕЛЫЕ КВАДРАТЫ ДЛЯ ЧЕКБОКСА ПРИ СОСТОЯНИИ CHECKED */
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+}
+
+.search-form__label:has(.search-form__label-text:not(:first-child)):hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* КНОПКИ */
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* КАРТОЧКИ */
+
+.content__card-link_current {
+  background: #545050;
+}
+
+.content__card-link:focus {
+  border: none;
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+/* Оффсет ориентировочный, чтобы норм смотрелось. Можно было сделать через бордер,
+ но в этот раз решил сделать так. Мб ошибка */
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.content__card-link:active {
+  background: #545050;
 }
