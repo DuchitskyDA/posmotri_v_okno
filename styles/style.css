@@ -78,8 +78,8 @@ ol {
 
 .result__video-container {
   position: relative;
-  width: 711px;
-  height: 386px;
+  inline-size: 711px;
+  block-size: 386px;
 }
 
 .result__video {
@@ -127,7 +127,6 @@ ol {
   font-size: 18px;
   line-height: normal;
   background: transparent;
-  cursor: pointer;
   appearance: none;
 }
 
@@ -183,7 +182,7 @@ ol {
   flex-direction: column;
   align-items: flex-start;
   gap: 30px;
-  overflow: scroll;
+  overflow: auto;
   block-size: 298px;
 }
 
@@ -231,17 +230,9 @@ ol {
 }
 
 .more-button {
-  padding: 6px 0;
-  inline-size: inherit;
-}
+  min-inline-size: 399px;
+  min-block-size: 34px;
 
-/* Понимаю, что не лучшее решение, но другого я не придумал.
- Сделал так, потому что этот блок все равно должен быть в ширину всего
- родительского блока. В этой связи и решил делать не через падинги, а так, как
- сделал. Я мог бы задать класс пустому ли и сделать красивее, но в задании говорилось,
- что не рекомендуется менять html */
-li:has(.more-button) {
-  inline-size: 100%;
 }
 
 /* СОСТОЯНИЯ */
@@ -250,13 +241,25 @@ li:has(.more-button) {
 
 .search-form__textfield:focus {
   outline: none;
+  border-left: none;
+  border-right: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: none;
+  border-left: none;
+  border-right: none;
 }
 
 .search-form__label:has(:focus-visible) {
-  border-right: 1px solid #fff;
-  border-left: 1px solid #fff;
   outline: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: 3px;
+
+}
+
+.search-form__textfield:active {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
 }
 
 /* ЧЕКБОКСЫ */
@@ -291,6 +294,10 @@ li:has(.more-button) {
 .button:hover {
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.button:active {
+  background: #545050;
 }
 
 /* КАРТОЧКИ */
