@@ -1,1 +1,1 @@
-https://github.com/DuchitskyDA/posmotri_v_okno.git
+https://github.com/DuchitskyDA/posmotri_v_okno.git 
