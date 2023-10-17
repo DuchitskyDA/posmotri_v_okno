@@ -315,8 +315,6 @@ ol {
   outline: 1px solid #fff;
 }
 
-/* Оффсет ориентировочный, чтобы норм смотрелось. Можно было сделать через бордер,
- но в этот раз решил сделать так. Мб ошибка */
 .content__card-link:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
